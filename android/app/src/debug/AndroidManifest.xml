@@ -1,0 +1,39 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- The INTERNET permission is required for development. Specifically,
+         the Flutter tool needs it to communicate with the running application
+         to allow setting breakpoints, to provide hot reload, etc.
+    -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.front" />
+    <uses-feature android:name="android.hardware.camera2" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.flash" android:required="false" />
+    //1.
+    // <uses-permission android:name="android.permission.INTERNET"/> is used in Android applications to grant access to the internet.When an Android app requires this permission, it means that the app needs to establish network connections and communicate with remote servers or services over the internet. This permission allows the app to send and receive data, download resources, make API calls, and interact with online services.
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    //2.
+    // The permission android.permission.READ_EXTERNAL_STORAGE is used in Android applications to request access to read the external storage of the device. This permission allows the app to read files and folders from the user's external storage, such as the SD card or other storage locations.
+    // It's important to note that starting from Android 10 (API level 29), apps are required to use the Storage Access Framework (SAF) to access files on external storage. The READ_EXTERNAL_STORAGE permission is considered a "dangerous" permission, meaning that users have to explicitly grant it, and developers need to handle runtime permissions to request and obtain this permission from the user.
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    //3.
+    // The permission android.permission.WRITE_EXTERNAL_STORAGE is used in Android applications to allow the app to write data to external storage, such as the device's SD card or other external storage devices. This permission is necessary if the app needs to save or modify files on the user's device outside of its private internal storage.
+    // It's worth noting that starting from Android 11 (API level 30), apps are generally encouraged to use more granular storage permissions, such as MANAGE_EXTERNAL_STORAGE, to request access to specific directories or types of files on external storage.
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    //4., 5.
+    // The <uses-feature> element is used to indicate that the app requires a particular hardware feature on the device to function properly. In this case, android.hardware.camera indicates that the app requires a camera to be present on the device. It does not grant permission to access the camera directly.
+    // If your app needs to access the camera and capture photos or videos, you would need to request the appropriate camera permission in addition to specifying the required camera feature. The permission to access the camera is typically declared using the <uses-permission> element in the manifest file, with a declaration like <uses-permission android:name="android.permission.CAMERA" />.
+    // Please note that camera-related permissions should be used responsibly and only when necessary for the functionality of your app. Additionally, starting from Android 6.0 (API level 23), users are prompted to grant permissions at runtime, so you would need to handle the permission request and user consent in your app code as well.
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" />
+
+    //6.
+    // It indicates that the application requires the presence of autofocus capability on the device's camera in order to function properly.
+    // The android.hardware.camera.autofocus feature is used to determine if the device's camera supports autofocus functionality. Autofocus is a feature that allows the camera to automatically focus on the subject being captured, resulting in sharper and clearer images.
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+</manifest>
